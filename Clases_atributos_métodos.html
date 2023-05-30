@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clase Gato</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<script>
+		class Gato {
+			constructor(nombre, edad, peso) {
+				this.nombre = nombre;
+				this.edad = edad;
+				this.peso = peso;
+			}
+			correr() {
+				document.write("El gato corre");
+			}
+		};
+
+		var gato1 = new Gato("peludo", 4, 3); //objeto
+		var gato2 = new Gato("Manchas", 7, 4); //objeto
+		document.write("<br>"+gato1.nombre);
+		document.write("<br>"+gato2.nombre+"<br>");
+		gato1.correr();
+	</script>
+</body>
+<hr>
+<button>
+	<a href="parcial2.html">Volver</a>
+</button>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Figuras geométricas con canvas</title>
+	<style type="text/css">
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Rombo Canvas</h1>
+	<canvas id="rombo-canvas" width="200" height="200"></canvas><br>
+	<h1>Romboide con canvas y Javascript</h1>
+	<canvas id="romboide-canvas" width="250" height="150"></canvas><br>
+	<h1>Trapecio con canvas y Javascript</h1>
+	<canvas id="trapecio-canvas" width="250" height="150"></canvas><br>
+	<h1>Trapezoide con canvas y Javascript</h1>
+	<canvas id="trapezoide-canvas" width="200" height="100"></canvas><br>
+	<h1>Pentágono con canvas y Javascript</h1>
+	<canvas id="pentagono-canvas" width="200" height="200"></canvas><br>
+
+	<script type="text/javascript">
+		// Función para dibujar el rombo amarillo
+		function drawRombo() {
+			var canvas = document.getElementById("rombo-canvas");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#FFCC00";
+			ctx.beginPath();
+			ctx.moveTo(100, 0);
+			ctx.lineTo(200, 100);
+			ctx.lineTo(100, 200);
+			ctx.lineTo(0, 100);
+			ctx.closePath();
+			ctx.fill();
+			ctx.fillStyle = "black";
+			ctx.font = "20px Arial";
+			//ctx.fillText("Rombo Canvas", 100, 100);
+		}
+
+		// Función para dibujar el romboide morado
+		function drawRomboide() {
+			var canvas = document.getElementById("romboide-canvas");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#993399";
+			ctx.beginPath();
+			ctx.moveTo(0, 0);
+			ctx.lineTo(200, 0);
+			ctx.lineTo(150, 150);
+			ctx.lineTo(50, 150);
+			ctx.closePath();
+			ctx.fill();
+			ctx.fillStyle = "white";
+			ctx.font = "20px Arial";
+			//ctx.fillText("Romboide con canvas y Javascript", 10, 80);
+		}
+
+		// Función para dibujar el trapecio azul
+		function drawTrapecio() {
+			var canvas = document.getElementById("trapecio-canvas");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#336699";
+			ctx.beginPath();
+			ctx.moveTo(50, 0);
+			ctx.lineTo(200, 0);
+			ctx.lineTo(150, 100);
+			ctx.lineTo(0, 100);
+			ctx.closePath();
+			ctx.fill();
+			ctx.fillStyle = "white";
+			ctx.font = "20px Arial";
+			//ctx.fillText("Trapecio con canvas y Javascript", 10, 60);
+		}
+
+		// Función para dibujar el trapezoide verde pistache
+		function drawTrapezoide() {
+			var canvas = document.getElementById("trapezoide-canvas");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#66CC66";
+			ctx.beginPath();
+			ctx.moveTo(0, 0);
+			ctx.lineTo(150, 0);
+			ctx.lineTo(100, 100);
+			ctx.lineTo(50, 100);
+			ctx.closePath();
+			ctx.fill();
+			ctx.fillStyle = "white";
+			ctx.font = "20px Arial";
+			//ctx.fillText("Trapezoide con canvas y Javascript", 10, 60);
+		}
+
+		// Función para dibujar el pentágono verde pasto
+        function drawPentagono() {
+			var canvas = document.getElementById("pentagono-canvas");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#00CC66";
+			ctx.beginPath();
+			ctx.moveTo(100, 0);
+			ctx.lineTo(200, 75);
+			ctx.lineTo(175, 200);
+			ctx.lineTo(25, 200);
+			ctx.lineTo(0, 75);
+			ctx.closePath();
+			ctx.fill();
+			ctx.fillStyle = "white";
+			ctx.font = "20px Arial";
+			//ctx.fillText("Pentágono con canvas y Javascript", 10, 100);
+		}
+
+		drawRombo();
+		drawRomboide();
+		drawTrapecio();
+		drawTrapezoide();
+		drawPentagono();
+	</script>
+</body>
+<hr>
+<button>
+	<a href="parcial2.html">Volver</a>
+</button>
+</html>

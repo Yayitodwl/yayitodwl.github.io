@@ -1,0 +1,112 @@
+/* Estilos generales */
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	background-color: #f2f2f2;
+}
+body {
+    background-image: url('fondo-estrellas.png');
+  }
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+h1 {
+	margin: 0;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+}
+
+section {
+	margin-bottom: 40px;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+form label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+form input,
+form textarea,
+form select {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+}
+
+form input[type="submit"] {
+	background-color: #333;
+	color: #fff;
+	border: none;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Estilos específicos */
+
+#servicios li {
+	font-weight: bold;
+}
+
+#sobre-nosotros img {
+	float: right;
+	margin-left: 20px;
+	max-width: 300px;
+}
+
+#contacto label {
+	font-weight: bold;
+}
+
+.grafica {
+	width: 100%;
+	height: 400px;
+	background-color: #f2f2f2;
+}

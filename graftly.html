@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gráficas con Chart.js y Plotly.js</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>Gráficas con Chart.js y Plotly.js</h1>
+
+    <h2>Gráfica de pastel</h2>
+    <div style="width:50%;">
+        <canvas id="graficaPastel"></canvas>
+    </div>
+
+    <h2>Gráfica de barras</h2>
+    <div style="width:50%;">
+        <canvas id="graficaBarras"></canvas>
+    </div>
+
+    <h2>Gráfica de puntos</h2>
+    <div style="width:50%;">
+        <div id="graficaPuntos"></div>
+    </div>
+    <script>
+        // Obtener los datos del usuario
+        var datosPastel = {
+            etiquetas: ["Rojo", "Azul", "Amarillo", "Verde", "Naranja"],
+            valores: [12, 19, 3, 5, 2]
+        };
+        var datosBarras = {
+            etiquetas: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],
+            valores: [12, 19, 3, 5, 2, 3]
+        };
+        var datosPuntos = {
+            x: [1, 2, 3, 4, 5],
+            y: [1, 4, 9, 16, 25],
+            modo: 'markers',
+            type: 'scatter'
+        };
+        // Crear la gráfica de pastel
+        var graficaPastel = document.getElementById("graficaPastel").getContext('2d');
+        var chartPastel = new Chart(graficaPastel, {
+            type: 'pie',
+            data: {
+                labels: datosPastel.etiquetas,
+                datasets: [{
+                    label: '# de Votos',
+                    data: datosPastel.valores,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+        // Crear la gráfica de barras
+        var graficaBarras = document.getElementById("graficaBarras").getContext('2d');
+        var chartBarras = new Chart(graficaBarras, {
+            type: 'bar',
+            data: {
+                labels: datosBarras.etiquetas,
+                datasets: [{
+                    label: '# de Ventas',
+                    data: datosBarras.valores,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                responsive: true
+            }
+        });
+        // Crear la gráfica de puntos
+        var graficaPuntos = document.getElementById("graficaPuntos");
+        var tracePuntos = {
+            x: datosPuntos.x,
+            y: datosPuntos.y,
+            mode: datosPuntos.modo,
+            type: datosPuntos.type
+        };
+        var dataPuntos = [tracePuntos];
+        var layoutPuntos = {
+            title: 'Gráfica de puntos',
+            xaxis: {
+                title: 'Eje X',
+                showgrid: false,
+                zeroline: false
+            },
+            yaxis: {
+                title: 'Eje Y',
+                showline: false
+            }
+        };
+        Plotly.newPlot(graficaPuntos, dataPuntos, layoutPuntos);
+    </script>
+</body>
+<hr>
+<button>
+    <a href="parcial2.html">Volver</a>
+</button>
+</html>

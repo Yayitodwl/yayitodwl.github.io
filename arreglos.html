@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de arreglos de JavaScript</title>
+  </head>
+  <body>
+    <script>
+      // Declaración de variables y arreglos
+      var se = new Array ("Lunes", "MArtes", "Miércoles");
+      var semana = ["Lunes","MArtes", "Miércoles", "Jueves", "Viernes", 2220];
+      // Imprimir arreglos en pantalla
+      document.write(semana+"<br>");
+      document.write(se+"<br>");
+      // Acceder a elementos de un arreglo
+      document.write("Indice [0]:"+se[0]+"<br>");
+      // Arreglo multidimensional
+      var uno=[
+        [10, 20, 30],
+        [1, 2, 3],
+        [40,50,1]
+      ];
+      document.write("Indice [0][0]: "+uno[0][0]+"<br>");
+      // Arreglo con elementos de diferentes tipos
+      var uno=[
+        100,
+        [10, 20, 30],
+        [1, 2, 3],
+        [40,50,1],
+        10
+      ];
+      // Arreglo anidado
+      var uno=[
+        100,
+        [10, 20,
+          [9,8,7,6,5]
+        ],
+        [1, 2, 3],
+        [40,50,1],
+        10
+      ];
+      // Agregar elementos a un arreglo
+      var dos =[ 10, 20]; 
+      dos.push(30); 
+      dos.push(40);
+      document.write(""+dos+"<br>");
+      // Convertir un arreglo en una cadena
+      var uno =[10, 20, 30, "HOLA"]
+      document.write("<br>"+"Cadena: "+uno.join());
+      // Imprimir arreglo en consola
+      var uno =[10, 20, 30, "HOLA"]
+      console.log (uno);
+      // Convertir una cadena en un arreglo
+      var tres= "Lunes, MArtes, Miercole"; // string
+      var tres4 = tres.split(","); // convertir cadena en arreglo
+      console.log(tres4);
+      // Ordenar un arreglo
+      var sem=["lunes", "martes", "miercoles", "jueves", "sabado", "domingo"]; 
+      document.write("<br>"+sem.sort());
+      // Invertir el orden de un arreglo
+      document.write("<br>"+sem.reverse());
+      // Recorrer un arreglo con for-in
+      var num= [1,2,3,4,5];
+      for (let i in num){
+        document.write("<br>"+num[i]+"<br>");
+      };
+      // Recorrer un arreglo con forEach
+      num.forEach((dos, i) => document.write( "<br> ["+ i+ "]"+ dos+"<br>"));
+      // Buscar un elemento en un arreglo con find
+      var busca = num.find (dos => dos=="5"); 
+      document.write("<br> Buscado:"+busca);
+      // Buscar el índice de un elemento en un arreglo con findIndex
+      var busca = num.findIndex (dos => dos=="5");
+      document.write("<br> Buscado indice: "+busca);
+      // Buscar todos los elementos que cumplen una condición en un arreglo con filter
+      var busca = num.filter (dos => dos< 10);
+		  document.write("<br> Si hay valores menores a diez:"+busca);
+	  </script>
+  </body>
+  <hr>
+  <button>
+      <a href="parcial2.html">Volver</a>
+  </button>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Grabación de video</title>
+	<style>
+		#video {
+			width: 640px;
+			height: 480px;
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<video id="video" controls></video><br><br>
+	<button id="startButton">Comenzar grabación</button>
+	<button id="stopButton" disabled>Detener grabación</button>
+	<script>
+		const videoElement = document.getElementById('video');
+		const startButton = document.getElementById('startButton');
+		const stopButton = document.getElementById('stopButton');
+		let mediaRecorder;
+		let recordedChunks = [];
+		const handleDataAvailable = event => {
+			if (event.data.size > 0) {
+				recordedChunks.push(event.data);
+			}
+		};
+		const handleStop = () => {
+			const blob = new Blob(recordedChunks, { type: 'video/mp4' });
+			recordedChunks = [];
+			const videoURL = URL.createObjectURL(blob);
+			videoElement.src = videoURL;
+			videoElement.controls = true;
+		};
+		const handleStart = () => {
+			navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+				.then(stream => {
+					videoElement.srcObject = stream;
+					mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+					mediaRecorder.ondataavailable = handleDataAvailable;
+					mediaRecorder.onstop = handleStop;
+					startButton.disabled = true;
+					stopButton.disabled = false;
+					mediaRecorder.start();
+				})
+				.catch(error => {
+					console.error('Error al acceder a la cámara y el micrófono', error);
+				});
+		};
+		const handleStopClick = () => {
+			mediaRecorder.stop();
+			startButton.disabled = false;
+			stopButton.disabled = true;
+		};
+		startButton.addEventListener('click', handleStart);
+		stopButton.addEventListener('click', handleStopClick);
+	</script>
+</body>
+<hr>
+<button>
+	<a href="parcial2.html">Volver</a>
+</button>
+</html>

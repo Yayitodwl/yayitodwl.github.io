@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de practicas</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<header>
+    <input type="checkbox" id="theme-switcher">
+    <label for="theme-switcher">Tema obscuro</label>
+    <nav id="navbar">
+        <ul>
+            <li><img src="Softdwl-preview.png" alt="Logo de Softdwl" height="50" width="50"></li>
+            <li><a href="index.html">Portada</a></li>
+            <li><a href="parcial1.html">Parcial 1</a></li>
+            <li><a href="parcial2.html">Parcial 2</a></li>
+            <li><a class="active" href="#">Parcial 3</a></li>
+            <li><img src="Softdwl-preview.png" alt="Logo de Softdwl" height="50" width="50"></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <!--Sistema de enfermeria Enfermeria-->
+        
+        <!--Practica-->
+        <div class="box h1">
+            <h1>Sistema de Enfermeria</h1>
+            <p></p>
+            <img src="">
+            <p>TEXTO<br></p>
+            <img src="">
+            <p><br></p>
+            <p>TEXTO</p>
+            <li><a href="">Clic aqui para ver la practica</a></li>
+        </div><br>
+    </section>
+</main>
+
+<body>
+    <div class="box h2">
+        <footer>
+            <p>Todos los derechos reservados ©Yayitodwl by SOFTDWL S.A. de C.V.</p>
+        </footer>
+    </div>
+    <script>
+        // Obtener el elemento del interruptor de tema
+        const themeSwitcher = document.querySelector('#theme-switcher');
+
+        // Obtener el tema seleccionado del almacenamiento local (si existe)
+        const savedTheme = localStorage.getItem('theme');
+
+        // Establecer el tema inicial basado en el valor almacenado o por defecto (claro)
+        const initialTheme = savedTheme || 'light';
+        document.body.classList.add(`${initialTheme}-theme`);
+
+        // Establecer el estado del interruptor de tema basado en el tema inicial
+        themeSwitcher.checked = initialTheme === 'dark';
+
+        // Agregar un evento de escucha para detectar cambios en el interruptor de tema
+        themeSwitcher.addEventListener('change', function () {
+            // Obtener el valor actual del interruptor de tema (claro u obscuro)
+            const theme = themeSwitcher.checked ? 'dark' : 'light';
+
+            // Cambiar las clases CSS del elemento <body> según el tema seleccionado
+            document.body.classList.remove('light-theme', 'dark-theme');
+            document.body.classList.add(`${theme}-theme`);
+
+            // Guardar el tema seleccionado en el almacenamiento local
+            localStorage.setItem('theme', theme);
+        });
+
+    </script>
+</body>
+
+</html>
