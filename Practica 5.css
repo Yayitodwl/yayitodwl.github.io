@@ -1,0 +1,29 @@
+/*comentario */
+
+h1 {
+
+    color: rgb(236, 84, 84); 
+    text-align: center;
+    
+    }
+    
+    a[href="https"]::before { 
+        content: "";
+    
+    }
+    
+    body {
+    
+    background-color: lightblue;
+    
+    }
+    
+    p{
+        font-family: verdana;
+        font-size: 30px;
+    }
+
+    p2 {
+        margin: 1000px 0;
+        border: 2px solid rgb(216, 71, 71);
+    }
